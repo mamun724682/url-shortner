@@ -39,7 +39,8 @@ class ShortLinkService
 
     protected function random_number_with_char($limit = 5)
     {
-        return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
+        // return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit); // High chance generate repeated code
+        return Str::random(); // Less chance to generate repeated code
     }
 
 }
